@@ -32,6 +32,28 @@ public class Lc75 {
         }
     }
 
+    // {1,0,2,0,2,1,2};
+    public void sort(int[] nums){
+        int zero = -1; //nums[0,zero]
+        int two = nums.length; // nums[two,num.length-1]
+        for (int i = 0; i < nums.length;) {// num[zero,two];
+            if(nums[i] == 0){
+                zero++;
+                swap(nums, zero, i);
+                i++;
+            } else if(nums[i] == 1){
+                i++;
+            } else {
+                if(nums.length >= i || two <= i){
+                    return;
+                }
+                two--;
+                swap(nums,two,i);
+            }
+        }
+    }
+
+
     public static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
