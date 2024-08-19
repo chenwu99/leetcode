@@ -33,21 +33,21 @@ public class PrintNum {
     public static void main(String[] args) {
         PrintNum printNumbers = new PrintNum();
 
-        Thread thread1 = new Thread(() -> {
+        Thread threadTest1 = new Thread(() -> {
             printNumbers.printNumber(0);
         });
 
-        Thread thread2 = new Thread(() -> {
+        Thread threadTest2 = new Thread(() -> {
             printNumbers.printNumber(1);
         });
 
-        Thread thread3 = new Thread(() -> {
+        Thread threadTest3 = new Thread(() -> {
             printNumbers.printNumber(2);
         });
 
-        thread1.start();
-        thread2.start();
-        thread3.start();
+        threadTest1.start();
+        threadTest2.start();
+        threadTest3.start();
     }
 
 }
